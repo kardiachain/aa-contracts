@@ -37,7 +37,7 @@ function getChainConfig(jsonRpcUrl?: string): NetworkUserConfig {
 }
 
 const config: HardhatUserConfig = {
-  defaultNetwork: "hardhat",
+  defaultNetwork: "kaiTestnet",
   etherscan: {
     apiKey: {
       mainnet: process.env.ETHERSCAN_API_KEY || "",
@@ -135,6 +135,8 @@ const config: HardhatUserConfig = {
     base: getChainConfig(process.env.BASE_RPC),
     baseGoerli: getChainConfig(process.env.BASE_GOERLI_RPC),
     baseSepolia: getChainConfig(process.env.BASE_SEPOLIA_RPC),
+    kaiTestnet: getChainConfig("https://dev.kardiachain.io"),
+    kaiMainnet: getChainConfig("https://rpc.kardiachain.io")
   },
   paths: {
     artifacts: "./artifacts",
