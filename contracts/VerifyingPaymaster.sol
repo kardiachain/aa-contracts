@@ -36,7 +36,7 @@ contract VerifyingPaymaster is BasePaymaster {
     address public vault;
 
     constructor(IEntryPoint _entryPoint, address _owner) BasePaymaster(_entryPoint) {
-        _transferOwnership(_owner);
+        transferOwnership(_owner);
         verifier = _owner;
         vault = _owner;
     }
