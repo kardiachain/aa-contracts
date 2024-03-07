@@ -191,6 +191,7 @@ export function shouldValidatePaymasterUserOpCorrectly(): void {
         this.signers.admin,
         this.entryPoint,
       );
+      await this.verifyingPaymaster.setVerifier(this.signers.verifier.address)
       const hash = await this.verifyingPaymaster.getHash(
         partialUserOp,
         MOCK_VALID_UNTIL,
