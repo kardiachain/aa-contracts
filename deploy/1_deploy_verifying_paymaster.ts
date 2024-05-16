@@ -10,7 +10,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     from,
     args: [process.env.ENTRY_POINT_ADDRESS, from],
     log: true,
-    deterministicDeployment: true,
+    deterministicDeployment: false,
   });
 };
 
