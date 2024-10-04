@@ -21,4 +21,6 @@ func.skip = async (_: HardhatRuntimeEnvironment): Promise<boolean> => {
   return !runOnly.includes("1");
 };
 
+func.tags = ['VerifyingPaymaster']
+
 export default func;

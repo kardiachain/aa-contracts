@@ -7,6 +7,8 @@ import { resolve } from "path";
 
 import "./tasks/accounts";
 import "./tasks/verifier";
+import "./tasks/deposit";
+import "./tasks/stake";
 
 const dotenvConfigPath: string = process.env.DOTENV_CONFIG_PATH || "./.env";
 dotenvConfig({ path: resolve(__dirname, dotenvConfigPath) });
@@ -137,7 +139,9 @@ const config: HardhatUserConfig = {
     baseGoerli: getChainConfig(process.env.BASE_GOERLI_RPC),
     baseSepolia: getChainConfig(process.env.BASE_SEPOLIA_RPC),
     kaiTestnet: getChainConfig("https://dev.kardiachain.io"),
-    kaiMainnet: getChainConfig("https://rpc.kardiachain.io")
+    kaiMainnet: getChainConfig("https://rpc.kardiachain.io"),
+    l2Testnet: getChainConfig("https://l2-node.regtest.trustless.computer/"),
+    l2Mainnet: getChainConfig("https://rpc.bittendo.com/")
   },
   paths: {
     artifacts: "./artifacts",
